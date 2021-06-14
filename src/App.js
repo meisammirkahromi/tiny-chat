@@ -1,7 +1,10 @@
+import 'antd/dist/antd.css';
+
+import MainLayout from './components/MainLayout';
 
 function App() {
   return (
-    <p>Cognite chat challenge</p>
+    <MainLayout />
   );
 }
 
