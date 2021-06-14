@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types'
 
+import { useSelector } from "react-redux";
+import { selectContactSlice } from "../../state/reducers/contactsReducer";
+
 import { Row, Col } from 'antd';
 import ContactList from './components/ContactList';
 import Conversations from './components/Conversations';
 
 const MainLayout = () => {
+  const contactsSlice = useSelector(selectContactSlice);
+
   return (
     <Row
       style={{
@@ -27,7 +32,9 @@ const MainLayout = () => {
           padding: 20,
         }}
       >
-        <Conversations />
+        <Conversations 
+          selectedContact={contactsSlice.selectedContact}
+        />
       </Col>
     </Row>
   )
